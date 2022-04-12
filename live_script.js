@@ -20,7 +20,7 @@ const link = document.createElement('link')
 link.rel = 'stylesheet'
 if( locale === 'production'){
 	// link.href = 'https://resource.oko.nyc/serv/iomic/css/iomic.css?v=16'
-	link.href = 'https://cdn.jsdelivr.net/gh/CubbyStudio/CubbyStudio/css/iomic.css?v=16'
+	link.href = 'https://cdn.jsdelivr.net/gh/CubbyStudio/CubbyStudio/css/iomic.css?v=17'
 }else{
 	link.href = './css/iomic.css'
 }
