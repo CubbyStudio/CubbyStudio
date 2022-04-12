@@ -4,18 +4,23 @@ document.addEventListener('DOMContentLoaded', async() => {
 // ----------------- init
 // locale
 let locale
-if( window.location.href.match(/grip-selector/) ){
-	locale = 'production'
-}else if( window.location.href.match(/local.html/) ){
+// if( window.location.href.match(/grip-selector/) ){
+// 	locale = 'production'
+// }else 
+if( window.location.href.match(/local.html/) ){
 	locale = 'local'
+}else{
+	locale = 'production'
 }
-if( locale !== 'production' && locale !== 'local' ) return
+
+// if( locale !== 'production' && locale !== 'local' ) return
 
 // append stylesheet
 const link = document.createElement('link')
 link.rel = 'stylesheet'
 if( locale === 'production'){
-	link.href = 'https://resource.oko.nyc/serv/iomic/css/iomic.css?v=16'
+	// link.href = 'https://resource.oko.nyc/serv/iomic/css/iomic.css?v=16'
+	link.href = 'https://raw.githubusercontent.com/CubbyStudio/CubbyStudio/master/css/iomic.css?v=16'
 }else{
 	link.href = './css/iomic.css'
 }
