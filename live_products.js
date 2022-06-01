@@ -190,7 +190,7 @@ const iomic_products = {
 	"MID Evolution":{
 		sizes: ['ml', 'mxl'],
 		firmness: [0,0,0,1],
-		tackiness: [0,0,1],
+		tackiness: [0,1,1],
 		texture: [0,1,0],
 		image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646069410505-36LPVRW57QNO97LOAYJ5/MIDEVO_feature_bleed.png?format=750w',
 		url: 'https://www.iomicusa.com/fullswing/mid-evolution',
@@ -201,7 +201,7 @@ const iomic_products = {
 	"Sticky MID":{
 		sizes: ['ml', 'mxl'],
 		firmness: [0,0,0,1],
-		tackiness: [0,1,0],
+		tackiness: [1,1,0],
 		texture: [1,0,0],
 		image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646367839203-QL0AZQTKR8E07LYF5YYW/Sticky+MID_feature_bleed.png?format=750w',
 		url: 'https://www.iomicusa.com/fullswing/sticky-mid',

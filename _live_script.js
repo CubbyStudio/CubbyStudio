@@ -1,32 +1,25 @@
 
 document.addEventListener('DOMContentLoaded', async() => {
 
-
 // ----------------- init
 // locale
 let locale
+// if( window.location.href.match(/grip-selector/) ){
+// 	locale = 'production'
+// }else 
 if( window.location.href.match(/local.html/) ){
 	locale = 'local'
 }else{
 	locale = 'production'
 }
 
-// const logstack = 1
-const logstack = 0
-const stack = ( msg, ...args ) => {
-	if( logstack ) console.log('_________>', msg, ...args )
-}
-
-const localog = ( ...args ) => {
-	if( locale === 'local' ) console.log( ...args )
-}
-
+// if( locale !== 'production' && locale !== 'local' ) return
 
 // append stylesheet
 const link = document.createElement('link')
 link.rel = 'stylesheet'
 if( locale === 'production'){
-	// link.href = 'https://resource.oko.nyc/_projects/iomic/css/iomic.css?v=7'
+	// link.href = 'https://resource.oko.nyc/serv/iomic/css/iomic.css?v=16'
 	link.href = 'https://cdn.jsdelivr.net/gh/CubbyStudio/CubbyStudio/css/iomic.css?v=17'
 }else{
 	link.href = './css/iomic.css'
@@ -48,23 +41,23 @@ const IMAGE = type => {
 	if( iomic_assets[ type ] ){
 		return iomic_assets[ type ]
 	}else{
-		localog('missing image for: ', type )
+		console.log('missing image for: ', type )
 		return 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/6228bf44eabeea07082789a7/1646837572339/asdf.png'
 	}
 }
 
-// const PRODUCT = ( name, resource_type ) => {
-// 	switch( resource_type ){
-// 		case 'image':
-// 			return _products[ name ] ? _products[ name ].img : 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/6228bf44eabeea07082789a7/1646837572339/asdf.png'
-// 		case 'url':
-// 			localog('unhandled product url request', name, resource_type )
-// 			return ''
-// 		default: 
-// 			localog('unknown / invalid product request', name, resource_type )
-// 			return ''
-// 	}
-// }
+const PRODUCT = ( name, resource_type ) => {
+	switch( resource_type ){
+		case 'image':
+			return _products[ name ] ? _products[ name ].img : 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/6228bf44eabeea07082789a7/1646837572339/asdf.png'
+		case 'url':
+			console.log('unhandled product url request', name, resource_type )
+			return ''
+		default: 
+			console.log('unknown / invalid product request', name, resource_type )
+			return ''
+	}
+}
 
 
 
@@ -115,8 +108,6 @@ class Quiz {
 	// ------------------------------------------------------------------------------------------
 	show_step( type ){
 
-		stack('show_step', type )
-
 		// handle buttons
 		for( const btn of this.nav.querySelectorAll('.io-button')){
 			btn.classList.remove('selected')
@@ -157,9 +148,7 @@ class Quiz {
 		// filter
 		this.filter_step()
 
-		// if( type !== 'size' ) this.lookahead()
-
-		// localog( 'show step: ', type, this.state.active_step )
+		// console.log( 'show step: ', type, this.state.active_step )
 
 		this.result_indicator.style.display = 'none'
 
@@ -174,196 +163,172 @@ class Quiz {
 
 	}
 
-	lookahead(){
-
-		stack('lookahead')
-
-		let tally = {}
-
-		const options = this.content.querySelectorAll('.io-option')
-		for( const option of options ){
-
-			const lookahead_state = Object.assign({}, this.state )
-			// lookahead_state.active_step++
-			lookahead_state[ option.getAttribute('data-type') ] = option.getAttribute('data-value')
-
-			const possible = this.get_filtered( lookahead_state, 'lookahead' )
-
-			if( !Object.keys( possible ).length ){
-				option.classList.add('io-disabled')
-			}else{
-				option.classList.remove('io-disabled')
-			}
-			// localog('lookahead possible:', possible )
-
-		}
-
-		// for each option
-		// set state to AS IF option chose
-		// count results
-		// set disabled if zero
-
-	}
-
 	filter_step(){
-
-		stack('filter_step')
 		// "active_step": 3,
 		// "size": "c",
 		// "firmness": "extra soft",
 		// "tackiness": "in between",
 		// "surface": "rough"
 
-		// localog('skipping filter_step')
-		return
+		const options = this.content.querySelectorAll('.io-option')
 
-		// const options = this.content.querySelectorAll('.io-option')
+		for( const option of options ){
+			option.classList.remove('io-disabled')
+		}
 
-		// for( const option of options ){
-		// 	option.classList.remove('io-disabled')
-		// }
+		switch( this.state.active_step ){
+			case 0: // size
+				// never filtered....
+				break;
+			case 1: // firmness
+				if( this.state.class === 'undersize' ){
+					for( const option of options ){
+						const val = option.getAttribute('data-value')
+						if( val === 'firm' || val === 'extra soft' ){
+							option.classList.add('io-disabled')
+						}
+					}
+				}else if( this.state.class === 'standard' ){
+					for( const option of options ){
+						const val = option.getAttribute('data-value')
+						if( val === 'soft' ){
+							option.classList.add('io-disabled')
+						}
+					}
+				}else if( this.state.class === 'midsize' ){
+					for( const option of options ){
+						const val = option.getAttribute('data-value')
+						if( val === 'soft' || val === 'extra soft' || val === 'medium' ){
+							option.classList.add('io-disabled')
+						}
+					}
+				}
+				break;
+			case 2: // tackiness
+				if( this.state.class === 'undersize' ){
+					for( const option of options ){
+						const val = option.getAttribute('data-value')
+						if( val === 'more tacky' || val === 'less tacky' ){
+							option.classList.add('io-disabled')
+						}
+					}
+				}else if( this.state.class === 'standard' ){
+					// combine individual firmness settings:
+					if( this.state.firmness === 'medium' ){ 
+						for( const option of options ){
+							const val = option.getAttribute('data-value')
+							if( val === 'more tacky' || val === 'less tacky' ){
+								option.classList.add('io-disabled')
+							}
+						}						
+					}else if( this.state.firmness === 'firm'){
+						for( const option of options ){
+							const val = option.getAttribute('data-value')
+							if( val === 'in between' || val === 'more tacky' ){
+								option.classList.add('io-disabled')
+							}
+						}
+					}else if( this.state.firmness === 'extra soft'){
+						for( const option of options ){
+							const val = option.getAttribute('data-value')
+							if( val !== 'more tacky' ){
+								option.classList.add('io-disabled')
+							}
+						}
+					}
+				}else if( this.state.class === 'midsize' ){
+					for( const option of options ){
+						const val = option.getAttribute('data-value')
+						if( val === 'more tacky' ){
+							option.classList.add('io-disabled')
+						}
+					}
+				}
+				break;
+			case 3:  // surface
+				if( this.state.class === 'undersize' ){
+					for( const option of options ){
+						const val = option.getAttribute('data-value')
+						if( val === 'rough' || val === 'smooth' ){
+							// rando exception here:
+							if( val === 'smooth' && this.state.firmness === 'medium' ) continue
+							// normal:
+							option.classList.add('io-disabled')
+						}
 
-		// switch( this.state.active_step ){
-		// 	case 0: // size
-		// 		// never filtered....
-		// 		break;
-		// 	case 1: // firmness
-		// 		if( this.state.class === 'undersize' ){
-		// 			for( const option of options ){
-		// 				const val = option.getAttribute('data-value')
-		// 				if( val === 'firm' || val === 'extra soft' ){
-		// 					option.classList.add('io-disabled')
-		// 				}
-		// 			}
-		// 		}else if( this.state.class === 'standard' ){
-		// 			for( const option of options ){
-		// 				const val = option.getAttribute('data-value')
-		// 				if( val === 'soft' ){
-		// 					option.classList.add('io-disabled')
-		// 				}
-		// 			}
-		// 		}else if( this.state.class === 'midsize' ){
-		// 			for( const option of options ){
-		// 				const val = option.getAttribute('data-value')
-		// 				if( val === 'soft' || val === 'extra soft' || val === 'medium' ){
-		// 					option.classList.add('io-disabled')
-		// 				}
-		// 			}
-		// 		}
-		// 		break;
-		// 	case 2: // tackiness
-		// 		if( this.state.class === 'undersize' ){
-		// 			for( const option of options ){
-		// 				const val = option.getAttribute('data-value')
-		// 				if( val === 'more tacky' || val === 'less tacky' ){
-		// 					option.classList.add('io-disabled')
-		// 				}
-		// 			}
-		// 		}else if( this.state.class === 'standard' ){
-		// 			// combine individual firmness settings:
-		// 			if( this.state.firmness === 'medium' ){ 
-		// 				for( const option of options ){
-		// 					const val = option.getAttribute('data-value')
-		// 					if( val === 'more tacky' || val === 'less tacky' ){
-		// 						option.classList.add('io-disabled')
-		// 					}
-		// 				}						
-		// 			}else if( this.state.firmness === 'firm'){
-		// 				for( const option of options ){
-		// 					const val = option.getAttribute('data-value')
-		// 					if( val === 'in between' || val === 'more tacky' ){
-		// 						option.classList.add('io-disabled')
-		// 					}
-		// 				}
-		// 			}else if( this.state.firmness === 'extra soft'){
-		// 				for( const option of options ){
-		// 					const val = option.getAttribute('data-value')
-		// 					if( val !== 'more tacky' ){
-		// 						option.classList.add('io-disabled')
-		// 					}
-		// 				}
-		// 			}
-		// 		}else if( this.state.class === 'midsize' ){
-		// 			for( const option of options ){
-		// 				const val = option.getAttribute('data-value')
-		// 				if( val === 'more tacky' ){
-		// 					option.classList.add('io-disabled')
-		// 				}
-		// 			}
-		// 		}
-		// 		break;
-		// 	case 3:  // surface
-		// 		if( this.state.class === 'undersize' ){
-		// 			for( const option of options ){
-		// 				const val = option.getAttribute('data-value')
-		// 				if( val === 'rough' || val === 'smooth' ){
-		// 					// rando exception here:
-		// 					if( val === 'smooth' && this.state.firmness === 'medium' ) continue
-		// 					// normal:
-		// 					option.classList.add('io-disabled')
-		// 				}
+					}
+				}else if( this.state.class === 'standard' ){
+					// for( const option of options ){
+					// 	const val = option.getAttribute('data-value')
+					// 	if( val === 'rough' ){
+					// 		option.classList.add('io-disabled')
+					// 	}
+					// }
+					if( this.state.firmness === 'extra soft'){
+						for( const option of options ){
+							const val = option.getAttribute('data-value')
+							if( val !== 'smooth' ){
+								option.classList.add('io-disabled')
+							}
+						}	
+					}else if( this.state.firmness === 'medium' ){
+						for( const option of options ){
+							const val = option.getAttribute('data-value')
+							if( val === 'rough' ){
+								option.classList.add('io-disabled')
+							}
+						}
+					}else if( this.state.firmness === 'firm'){
+						for( const option of options ){
+							const val = option.getAttribute('data-value')
+							if( val === 'smooth' ){
+								option.classList.add('io-disabled')
+							}
+						}
+					}
+				}else if( this.state.class === 'midsize' ){
+					if( this.state.firmness === 'firm' ){
+						if( this.state.tackiness === 'less tacky'){
+							for( const option of options ){
+								const val = option.getAttribute('data-value')
+								if( val !== 'hybrid' ){
+									option.classList.add('io-disabled')
+								}
+							}
+						}else if( this.state.tackiness === 'in between'){
+							for( const option of options ){
+								const val = option.getAttribute('data-value')
+								if( val !== 'smooth' ){
+									option.classList.add('io-disabled')
+								}
+							}
+						}
+					}
+				}
+				break;
 
-		// 			}
-		// 		}else if( this.state.class === 'standard' ){
-		// 			// for( const option of options ){
-		// 			// 	const val = option.getAttribute('data-value')
-		// 			// 	if( val === 'rough' ){
-		// 			// 		option.classList.add('io-disabled')
-		// 			// 	}
-		// 			// }
-		// 			if( this.state.firmness === 'extra soft'){
-		// 				for( const option of options ){
-		// 					const val = option.getAttribute('data-value')
-		// 					if( val !== 'smooth' ){
-		// 						option.classList.add('io-disabled')
-		// 					}
-		// 				}	
-		// 			}else if( this.state.firmness === 'medium' ){
-		// 				for( const option of options ){
-		// 					const val = option.getAttribute('data-value')
-		// 					if( val === 'rough' ){
-		// 						option.classList.add('io-disabled')
-		// 					}
-		// 				}
-		// 			}else if( this.state.firmness === 'firm'){
-		// 				for( const option of options ){
-		// 					const val = option.getAttribute('data-value')
-		// 					if( val === 'smooth' ){
-		// 						option.classList.add('io-disabled')
-		// 					}
-		// 				}
-		// 			}
-		// 		}else if( this.state.class === 'midsize' ){
-		// 			if( this.state.firmness === 'firm' ){
-		// 				if( this.state.tackiness === 'less tacky'){
-		// 					for( const option of options ){
-		// 						const val = option.getAttribute('data-value')
-		// 						if( val !== 'hybrid' ){
-		// 							option.classList.add('io-disabled')
-		// 						}
-		// 					}
-		// 				}else if( this.state.tackiness === 'in between'){
-		// 					for( const option of options ){
-		// 						const val = option.getAttribute('data-value')
-		// 						if( val !== 'smooth' ){
-		// 							option.classList.add('io-disabled')
-		// 						}
-		// 					}
-		// 				}
-		// 			}
-		// 		}
-		// 		break;
+			default: 
+				console.log('(no active step, filtering results)')
+				break;
+		}
+	}
 
-		// 	default: 
-		// 		localog('(no active step, filtering results)')
-		// 		break;
-		// }
+	show_filtered(){
+		const f = this.get_filtered()
+		if( !this.dev_filtered ){
+			this.dev_filtered = document.createElement('div')
+			this.dev_filtered.id = 'io-filtered-list'
+		}
+		this.dev_tooltip.appendChild( this.dev_filtered )
+		this.dev_filtered.innerHTML = ''
+		for( const key in f ){
+			this.dev_filtered.innerHTML += key + '<br>'
+		}
 	}
 
 	set_state( key, value ){
-		stack('set_state', key, value )
 		if( typeof this.state[ key ] !== 'string' && typeof this.state[ key ] !== 'number' ){
-			localog('missing state key: ', key )
+			console.log('missing state key: ', key )
 			return
 		}
 		this.state[key] = value
@@ -372,25 +337,8 @@ class Quiz {
 	}
 
 	reflect_state(){
-		stack('reflect_state')
 		this.dev_tooltip.innerText = JSON.stringify( this.state, null, 4 )
 		this.show_filtered()
-	}
-
-	show_filtered(){
-		stack('show_filtered')
-		const f = this.get_filtered( this.state, 'show_filtered' )
-		if( !this.dev_filtered ){
-			this.dev_filtered = document.createElement('div')
-			this.dev_filtered.id = 'io-filtered-list'
-		}
-		this.dev_tooltip.appendChild( this.dev_filtered )
-		this.dev_filtered.innerHTML = ''
-		for( const key in f ){
-			this.dev_filtered.innerHTML += `${ key }: ${ f[key].tally }<br>`
-			// if( f[key].tally ) console.log('tally: ', f[key].name, f[key].tally )
-		}
-		// console.log('products with points: ', show )
 	}
 
 	build_results_elements( remaining ){
@@ -413,16 +361,12 @@ class Quiz {
 		header.innerHTML = 'Based on your answers, your recommended grip is:'
 		this.results.appendChild( header )
 
-		const top_product = this.get_top_rec( remaining )
-
-		/*
-			ok here is the issue...
-
-		*/
+		const keys = Object.keys( remaining )
+		const main_product = keys.length ? remaining[ keys[0] ] : {}
 
 		const result = document.createElement('div')
 		result.classList.add('io-result-main')
-		const main = this.build_main( top_product )
+		const main = this.build_main( remaining )
 		result.appendChild( main )
 		this.results.appendChild( result )
 
@@ -438,43 +382,40 @@ class Quiz {
 
 		return {
 			recs: recs,
-			keys: Object.keys( remaining ),
-			top_product: top_product,
+			keys: keys,
+			main_product: main_product,
 			main: main,
 		}
 
 	}
 
 	show_result(){
-		stack('show_result')
-		// calculate results
-		const remaining = this.get_filtered( this.state, 'show_result' )
 
-		// the main builder:
+		// calculate results
+		const remaining = this.get_filtered()
+
 		const { 
 			recs, 
 			keys, 
-			top_product,
+			main_product,
 			main,
 		} = this.build_results_elements( remaining )
 
-		const recommendations = this.get_recommendations( remaining, top_product )
-
-		// console.log('missing desc??: ', recommendations)
+		const recommendations = this.get_recommendations( remaining )
 
 		for( const key in recommendations ){
-			recs.appendChild( this.build_recommendation( recommendations[ key ] ) )
+			recs.appendChild( this.build_recommendation( recommendations[ key ] ))
 		}
 		this.results.appendChild( recs )
 
 		if( !keys.length ){
 			this.results.innerHTML = '(no products match these criteria)'
-			localog('missing A')
+			console.log('missing A')
 		}else{
 			const buynow = document.createElement('div')
 			buynow.classList.add('io-buynow')
 			const link = document.createElement('a')
-			link.href = top_product.url
+			link.href = main_product.url
 			link.target = '_blank'
 			const img = document.createElement('img')
 			img.src = iomic_assets.buy_now
@@ -483,19 +424,15 @@ class Quiz {
 			main.appendChild( buynow )
 		}
 
-		console.log('show-result top rec: \n', top_product.name)
-
 		this.results.style.display = 'inline-block'
 
 		this.result_indicator.style.display = 'inline-block'
 
-		const r = document.querySelector('.io-result-recs')
 		if( Object.keys( recommendations ).length ){
-			if( r ) r.style.display = 'block'
+			document.querySelector('.io-result-recs').style.display = 'block'
 		}else{
-			if( r ) r.style.display = 'none'
+			document.querySelector('.io-result-recs').style.display = 'none'
 		}
-
 
 		// ---------------
 		// mobile stuffs
@@ -517,7 +454,6 @@ class Quiz {
 	}
 
 	restart(){
-		stack('restart')
 		this.state = Object.assign({}, this.pure_state )
 		this.reflect_state()
 		this.show_step('size')
@@ -545,120 +481,76 @@ class Quiz {
 	// ------------------------------------------------------------------------------------------ 
 	// GETS
 	// ------------------------------------------------------------------------------------------ 
-	get_filtered( GIVEN_STATE, caller ){
-		stack('get_filtered', caller )
-		// const logging = true
+	get_filtered(){
+
 		const logging = false
 
-		// console.log('anytin wrong wit state wot', GIVEN_STATE )
+		let early_return
+		if( this.state.size === 'j' || this.state.size === 'ls' ){
+			early_return = "Sticky Lady's ＆ Junior"
+		} 
 
-		// i think - this func normally runs AFTER an option is selected, but BEFORE the step changes
-		// 
-		// const step_test = set_back_state ? this.state.active_step - 1 : this.state.active_step
+		if( this.state.size === 'mxxl' ){
+			early_return = 'Sticky JUMBO'
+		}
 
-		const printlog = {
-			size: {},
-			firmness: {},
-			tackiness: {},
-			surface: {},
+		if( early_return ){
+			const obj = Object.assign({}, iomic_products[ early_return ] )
+			obj.name = early_return
+			// console.log('returning early, should be shortcut product')
+			return { 
+				[ obj.name ]: obj
+			}
 		}
 
 		// ( business logic )
 
 		const clone = Object.assign({}, iomic_products )
-		// if( logging ) console.log('INIT clone: ', clone )
 
 		let product, index, rating
-
-		for( const key in clone ) clone[ key ].tally = 0 // init tally prop
-
-		// --- early returns
-		let early_return
-		if( GIVEN_STATE.size === 'j' || GIVEN_STATE.size === 'ls' ){
-			early_return = "Sticky Lady's ＆ Junior"
-		}
-		if( GIVEN_STATE.size === 'mxxl' ){
-			early_return = 'Sticky JUMBO'
-		}
-		if( early_return ){
-
-			clone[ early_return ].tally = 10
-
-			// ---- restore this to do one-off returns:
-			// const obj = Object.assign({}, iomic_products[ early_return ] )
-			// obj.name = early_return
-			// obj.tally = 10
-			// if( logging ) localog('returning early, should be shortcut product')
-			// return { 
-			// 	[ obj.name ]: obj
-			// }
-		}
-		// --- early returns
-
 		for( const key in clone ){
 			product = clone[ key ]
-			// product.tally = 0
 			// size
-			if( GIVEN_STATE.active_step >= 0 ){
+			if( this.state.active_step >= 0 ){
 				// console.log('filtering size')
-				if( !product.sizes.includes( GIVEN_STATE.size ) ){
-					if( logging ){
-						printlog.size[ key ] = false
-						// console.log('unmatch size: ', key, product.sizes, GIVEN_STATE.size )
-					}
-					// console.log('size', GIVEN_STATE.size )
-					// delete clone[ key ]
+				if( !product.sizes.includes( this.state.size ) ){
+					if( logging ) console.log('unmatch size: ', key, product.sizes, this.state.size )
+					// console.log('size', this.state.size )
+					delete clone[ key ]
 					continue
-				}else{
-					product.tally++
 				}
 			}
 			// firmness
-			if( GIVEN_STATE.active_step >= 1 ){
+			if( this.state.active_step >= 1 ){
 				// console.log('filtering firmness')
-				index = iomic_labels.firm.indexOf( GIVEN_STATE.firmness )
+				index = iomic_labels.firm.indexOf( this.state.firmness )
 				rating = product.firmness[ index ]
 				if( rating !== 1 ){
-					if( logging ){
-						printlog.firmness[ key ] = false
-						// console.log('unmatch firmness: ', key, index, rating, GIVEN_STATE.firmness )
-					}
-					// delete clone[ key ]
+					if( logging ) console.log('unmatch firmness: ', key, index, rating, this.state.firmness )
+					delete clone[ key ]
 					continue
-				}else{
-					product.tally++
 				}
 			}
 			// tackiness
-			if( GIVEN_STATE.active_step >= 2 ){
+			if( this.state.active_step >= 2 ){
 				// console.log('filtering tackiness')
-				index = iomic_labels.tack.indexOf( GIVEN_STATE.tackiness )
+				index = iomic_labels.tack.indexOf( this.state.tackiness )
 				rating = product.tackiness[ index ]
 				if( rating !== 1 ){
-					if( logging ){
-						printlog.tackiness[ key ] = false
-						// console.log('unmatch tackiness: ', key, index, rating, GIVEN_STATE.tackiness )
-					}
-					// delete clone[ key ]
+					if( logging ) console.log('unmatch tackiness: ', key, index, rating, this.state.tackiness )
+					delete clone[ key ]
 					continue
-				}else{
-					product.tally++
 				}
 			}
 			// surface
-			if( GIVEN_STATE.active_step >= 3 ){
+			if( this.state.active_step >= 3 ){
 				// console.log('filtering surface')
-				index = iomic_labels.texture.indexOf( GIVEN_STATE.surface )
+				index = iomic_labels.texture.indexOf( this.state.surface )
 				rating = product.texture[ index ]
 				if( rating !== 1 ){
-					if( logging ){
-						printlog.surface[ key] = true
-						// console.log('unmatch surface: ', key, index, rating, GIVEN_STATE.surface )
-					}
-					// delete clone[ key ]
+					if( logging ) console.log('unmatch surface: ', key, index, rating, this.state.surface )
+					delete clone[ key ]
 					continue
-				}else{
-					product.tally++
 				}
 			}
 		}
@@ -668,11 +560,7 @@ class Quiz {
 			clone[ key ].name = key
 		}
 
-		if( logging ){
-			// console.log('get_filtered state: ', this.state )
-			// console.log('get_filtered printlog: ', printlog )
-			console.log('get_filtered result: ', clone )
-		}
+		if( logging ) console.log('get_filtered: ', clone )
 
 		return clone
 
@@ -680,150 +568,61 @@ class Quiz {
 
 
 	get_choice_key(){
-		stack('get_choice_key')
 		return this.state.size + '_' + this.state.firmness + '_' + this.state.tackiness + '_' + this.state.surface
 	}
 
-	get_top_rec( products ){
-		let max = 0
-		let product
-		for( const key in products ){
-			if( products[key].tally && products[key].tally > max ){
-				product = products[ key ]
-				max = products[key].tally
-			}
-		}
-		return product
-	}
-
-	get_recommendations( products, top_product ){
-		stack('get-recommendations')
+	get_recommendations( products ){
 		if( !products){
-			localog('invalid get recommendations')
+			console.log('invalid get recommendations')
 			return {}
 		}
-		if( !top_product || !top_product.recommendations  ){ // || !top_product.recommendations.length
-			localog('invalid top_product: ', products, top_product )
-			return {}
-		}
-
+		// overflow recs
 		const recs = {}
+		const keys = Object.keys( products )
 
-		let filled = 0
-		const sort_tally = []
-		for( const key in products ){
-			if( !iomic_products[ key ] || !iomic_descriptions[ key ]){
-				localog('invalid recommendation: ', r )
-				continue
-			}
-			if( top_product.name === key ) continue
-			
-			sort_tally.push( products[ key ])
-
-			filled++
-
+		if( keys.length === 1 ){
+			// normal products with no overflow recommendations
+		}else{
+			// products where there are multiple results
+			for( let i = 0; i < keys.length; i++ ){
+				if( i > 0 ) recs[ keys[i] ] = iomic_products[ keys[i] ]
+			}			
 		}
 
-		// console.log('pre filter', this.get_top_rec( sort_tally).name )
-
-		this.filter_rec_exceptions( top_product, sort_tally )
-
-		/*
-			so HERE, there should be only FOUR when stick jumbo is top_product
-		*/
-		console.log('post filter', sort_tally.length )
-
-
-
-		// const sorted = 
-		sort_tally.sort((a, b) => {
-			// return a.tally - b.tally
-			return b.tally - a.tally
-		})
-
-		let name
-		let added = 0
-		for( let i = 0; i < sort_tally.length; i++ ){
-			if( added > 3 ) continue
-			if( this.skip_exception_recs( top_product, sort_tally[i], i ) ) continue
-			name = sort_tally[i].name
-			recs[ name ] = sort_tally[i]
-			recs[ name ].description = iomic_descriptions[ name ]
-			recs[ name ].name = name
-			added++
+		// listed recs
+		const main = products[ Object.keys( products)[0] ]
+		if( !main || !main.recommendations  ){ // || !main.recommendations.length
+			console.log('invalid main: ', products )
+			return {}
+		}
+		// let missing = false
+		for( const key of main.recommendations ){
+			if( !iomic_products[ key ] || !iomic_descriptions[ key ] ){
+				// !recs[ key ] &&
+				console.log('get_recommendations: already got or missing: ', key )
+			}				
+			recs[ key ] = iomic_products[ key ]
+			recs[ key ].description = iomic_descriptions[ key ]
+			recs[ key ].name = key
 		}
 
+		this.filter_rec_exceptions( main, recs )
+		// if( missing ){
+		// 	console.log('missing, from keys: ', Object.keys( iomic_products ) )
+		// }
 		return recs
 	}
 
 
-	skip_exception_recs( main, tally_obj, index ){
-		// remove Ladies for Cadet+ size
-		// console.log( main.name, tally_obj.name )
-		const size_to_index = Object.keys( iomic_sizes ).indexOf( this.state.size )
-		if( tally_obj.name === "Sticky Lady's ＆ Junior" && size_to_index > 3 ){
-			console.log('skipping Ladies recommendation')
-			return true
-		}
-		return false
-	}
-
-
 	filter_rec_exceptions( product, recommendations ){
-		/*
-			custom transforms on recs
-		*/
-		stack('filter-rec-exceptions')
-
-		// console.log('filter recs main product: ', product.name )
-
-		if( !Array.isArray( recommendations )){
-			console.log('invalid filter rec')
-			return
+		// console.log('filtering: ', product, recommendations )
+		switch( product.name ){
+			case 'Sticky MID':
+				if( this.state.size !== 'mxl' ) delete recommendations['Sticky JUMBO']
+				break;
+			default: 
+				break;
 		}
-
-		//  XL grip size should NEVER have any grip with the "1.8 or 2.0
-		if(  product.sizes.includes('mxl') ){ //product.sizes.includes('mxxl') ||
-			// for( const key in recommendations ){
-			let entry
-			for( let i = recommendations.length - 1; i >= 0; i-- ){
-				entry = recommendations[i]
-				if( entry.name.match('1.8') || entry.name.match('2.0') ){
-					// delete recommendations[ key ]
-					const x = splice_attribute('name', entry.name, recommendations )
-				}
-			}
-		}
-
-		// totally custom replace recs entirely for:
-		let custom
-		if( product.name.match(/sticky jumbo/i)){
-			recommendations.length = 0
-			custom = ['MID Evolution', 'Sticky MID', 'X-Evolution 2.6', 'Sticky 2.3']
-			for( const name of custom ){
-				recommendations.push( iomic_products[ name ] )
-			}
-
-		}else if( product.name.match(/Sticky MID/i) ){
-			recommendations.length = 0
-			custom = ['MID Evolution', 'Sticky MID', 'X-Evolution 2.6', 'Sticky 2.3']
-			for( const name of custom ){
-				recommendations.push( iomic_products[ name ] )
-			}
-
-		}else if( product.name === 'MID Evolution'){
-			recommendations.length = 0
-			custom = ['Sticky MID', 'X-Evolution 2.3', 'X-Evolution 2.6', 'Sticky JUMBO']
-			for( const name of custom ){
-				recommendations.push( iomic_products[ name ] )
-			}
-
-		}
-
-		console.log( 'top product at filter exceptions: \n', product.name )
-
-		console.log('so why not', recommendations)
-
 	}
 
 
@@ -888,8 +687,7 @@ class Quiz {
 		this.content.appendChild( this.results )
 		this.dev_tooltip = document.createElement('div')
 		this.dev_tooltip.id = 'io-devtip'
-		if( locale === 'local' ){
-		// if( location.href.match(/localhost/i)){
+		if( location.href.match(/localhost/i)){
 			document.body.appendChild( this.dev_tooltip )
 		}
 
@@ -1085,19 +883,21 @@ class Quiz {
 
 		return c
 	}
-	build_main( product ){
-		/*
-			idempotent
-			build main result area for a single product
-		*/
 
-		localog('building main: \n', product.name )
+
+	build_main( products ){	// ( DOM ele )
+
+		console.log('building main: ', products )
+
+		products = products || {}
+
+		const product = products[ Object.keys( products)[0] ]
 
 		const ele = document.createElement('div')
 
 		if( !product ){
 			// no matches
-			localog('missing B')
+			console.log('missing B')
 			ele.innerHTML = 'no products match these criteria'
 			return ele
 		}
@@ -1117,9 +917,9 @@ class Quiz {
 		desc.classList.add('io-description')
 		const text = iomic_descriptions[ product.name ]
 		if( !text ){
-			localog('failed to find matching description for:')
-			localog( product.name )
-			localog( Object.keys( iomic_descriptions ) )
+			console.log('failed to find matching description for:')
+			console.log( product.name )
+			console.log( Object.keys( iomic_descriptions ) )
 		}
 		desc.innerHTML = text 
 
@@ -1128,13 +928,9 @@ class Quiz {
 
 		return ele
 	}
-	build_recommendation( product ){
-		/*
-			idempotent
-			build a rec element for a single product
-		*/
 
-		// localog('building alt: ', product.name, product.tally )
+	build_recommendation( product ){
+		console.log('building alt: ', product )
 		const link = document.createElement('a')
 		link.classList.add('io-result-rec', 'io-column', 'io-column-2')
 		link.href = product.url
@@ -1153,9 +949,6 @@ class Quiz {
 		desc.classList.add('io-rec-description')
 		desc.innerHTML = product.description
 		desc.style['text-decoration'] = 'none'
-		if( !product.description ){
-			localog('missing desc for: ', product )
-		}
 
 		if( 1 || window.innerWidth < 768 ){ // ( header below )
 			link.appendChild( img_wrapper )
@@ -1199,7 +992,7 @@ if( locale === 'local' ){
 }else if( locale === 'production'){
 	const main = document.querySelector('.Main-content')
 	if( !main ){
-		localog('failed to find main')
+		console.log('failed to find main')
 		return
 	}
 	main.appendChild( IOMIC.ele )
@@ -1208,21 +1001,3 @@ if( locale === 'local' ){
 IOMIC.show_step('size')
 
 })
-
-
-
-
-const splice_attribute = ( attr, value, set ) => {
-
-	if( !Array.isArray( set )){
-		localog('invalid splice attr')
-		return
-	}
-
-	for( const entry of set ){
-		if( entry[ attr ] === value ){
-			return set.splice( set.indexOf( entry ), 1 )
-		}
-	}
-
-}
