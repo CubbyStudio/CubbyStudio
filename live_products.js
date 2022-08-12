@@ -18,6 +18,22 @@ const iomic_labels = {
 
 
 const iomic_products = {
+	"iX Touch 2.0":{
+		sizes: ['mm', 'mml'], // follows ix2a
+		firmness: [0,1,0,0],
+		tackiness: [0,1,0],
+		texture: [1,0,0],
+		image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1655511445757-JODL6I9TGL37ZXWPF22W/iXTOUCH+2.0_grey.jpg?format=750w',
+		// https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1645658589023-JN7M6JA15F92FHT8RH4B/Sticky_Ladies_Junior_feature_bleed_2021.png',
+		// image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1645658014842-LH644PRG2H9F5AZDEVAT/Sticky_Ladies_Junior_feature_2021.jpg?format=750w',
+		url: 'https://www.iomicusa.com/fullswing/ix-touch',
+		recommendations: [
+			'iXSA 2.0',
+			'Sticky 2.3',
+			'Moebius Black 1.8',
+			'Sticky 1.8',
+		]
+	},
 	"Sticky Lady's ＆ Junior":{
 		sizes: ['j', 'ls'],
 		firmness: [0,0,0,0],

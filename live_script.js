@@ -27,7 +27,7 @@ const link = document.createElement('link')
 link.rel = 'stylesheet'
 if( locale === 'production'){
 	// link.href = 'https://resource.oko.nyc/_projects/iomic/css/iomic.css?v=7'
-	link.href = 'https://cdn.jsdelivr.net/gh/CubbyStudio/CubbyStudio/css/iomic.css?v=18'
+	link.href = 'https://cdn.jsdelivr.net/gh/CubbyStudio/CubbyStudio/css/iomic.css?v=20'
 }else{
 	link.href = './css/iomic.css'
 }
@@ -818,6 +818,11 @@ class Quiz {
 				recommendations.push( iomic_products[ name ] )
 			}
 
+		}else if( product.name === 'iX Touch 2.0'){
+			recommendations.length = 0
+			for( const name of product.recommendations ){
+				recommendations.push( iomic_products[ name ] )
+			}
 		}
 
 		console.log( 'top product at filter exceptions: \n', product.name )
