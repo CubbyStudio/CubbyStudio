@@ -713,7 +713,7 @@ class Quiz {
 		const sort_tally = []
 		for( const key in products ){
 			if( !iomic_products[ key ] || !iomic_descriptions[ key ]){
-				localog('invalid recommendation: ', r )
+				localog('invalid recommendation: ', key )
 				continue
 			}
 			if( top_product.name === key ) continue
