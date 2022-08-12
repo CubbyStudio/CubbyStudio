@@ -242,6 +242,9 @@ const iomic_products = {
 // `Iomic's Sticky series now offers its tour proven performance to Ladies and Juniors.`
 const iomic_descriptions = {
 
+	"iX Touch 2.0": `By softening the hardness by -15 (about 30%) from the normal hardness, adhesion is improved and further gripping power is achieved.
+The grip end is equipped with IOMIC’s Technology, a softness version of LTC (Low Torque Control), which provides players with a stable trajectory.`,
+
 	"Sticky Lady's ＆ Junior": `Iomic's Sticky series now offers its tour proven performance to Ladies and Juniors.`,
 
 	"Sticky 1.8": `The Sticky 1.8 is designed to be incredibly soft with great tackiness, while minimizing torque. This grip is suitable for all playing styles, from beginners to top ranked tour professionals.`,
