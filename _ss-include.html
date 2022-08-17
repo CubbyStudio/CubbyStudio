@@ -1,0 +1,22 @@
+<!--<script src='https://resource.oko.nyc/_projects/iomic/live_products.js'></script>
+<script src='https://resource.oko.nyc/_projects/iomic/live_script.js'></script>
+-->
+<script>
+;(() => {
+    try {
+    	const select = localStorage.getItem('check-grip-select-reload')
+    	const year = 1000 * 60 * 60 * 24 * 30 * 12
+    	const elapsed = Date.now() - Number( select )
+    	if( !select || elapsed > year ){
+	        localStorage.setItem('check-grip-select-reload', Date.now() );
+    		location.reload()
+    	}
+    	console.log('iomic reload date: ', select )
+    } catch(e) {
+    	console.log( 'error running reload: ', e)
+        return false;
+    }
+})();
+</script>
+<script src='https://cdn.jsdelivr.net/gh/CubbyStudio/CubbyStudio/live_script.min.js?v=21'></script>
+<script src='https://cdn.jsdelivr.net/gh/CubbyStudio/CubbyStudio/live_products.js?v=21'></script>
