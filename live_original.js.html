@@ -1,8 +1,15 @@
 <script>
 
 /*
-	search "add new" for adding new products
+
+	how to add a product:
+
+	0 - not available
+	1 - not available (deprecated - this is all handled with code filters now)
+	2 - available
 */
+
+
 
 
 const iomic_labels = {
@@ -11,52 +18,8 @@ const iomic_labels = {
 	texture: ['smooth', 'hybrid', 'rough'],
 }
 
-// *** add new 1
+
 const iomic_products = {
-
-	"iXx Cord 2.3": {
-		sizes: ['mm', 'mml'], // follows ix2a
-		firmness: [0,0,0,1],
-		tackiness: [0,0,1],
-		texture: [0,1,0],
-		image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1696222190698-APS61FV9UNJ5KYCEM0G5/iXx+CORD.jpg?format=750w',
-		url: 'https://www.iomicusa.com/fullswing/ixxcord23',
-		recommendations: [
-			"iXX 2.3",
-			"iX 2.3",
-			'X-Evolution 2.6',
-			'X-Evolution 2.3',
-		]
-	},
-
-	"Sticky Opus BC 1.8": {
-		sizes: ['mm', 'mml'], // follows ix2a
-		firmness: [0,0,1,0],
-		tackiness: [1,0,0],
-		texture: [1,0,0],
-		image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1674691470990-444GRPXF53DN1BGK4RZS/opusBC1_8.png?format=750w',
-		url: 'https://www.iomicusa.com/fullswing/sticky-opus-bc',
-		recommendations: [
-			'Moebius Black 1.8',
-			'Sticky 1.8',
-			'Sticky 1.8 SUPER LIGHT',
-			'Sticky Camo 1.8',
-		]		
-	},
-
-	"Sticky 3.5": {
-		sizes: ['mml', 'ml', 'mxl', 'mxxl'], // follows ix2a
-		firmness: [0,0,1,0],
-		tackiness: [1,0,0],
-		texture: [1,0,0],
-		image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1675096271768-GZS98DZO8CO92L6YV0WK/STICKY3_5title.jpg?format=750w',
-		url: 'https://www.iomicusa.com/fullswing/sticky3-5',
-		recommendations: [
-			'Sticky MID',
-			'Sticky JUMBO',
-		]		
-	},
-
 	"iX Touch 2.0":{
 		sizes: ['mm', 'mml'], // follows ix2a
 		firmness: [0,1,0,0],
@@ -277,7 +240,7 @@ const iomic_products = {
 }
 
 
-// *** add new 2
+
 // `Iomic's Sticky series now offers its tour proven performance to Ladies and Juniors.`
 const iomic_descriptions = {
 
@@ -377,19 +340,13 @@ Due to high demand, we just added our favorite colors, Platinum Grey and White i
 
 It's Eco-Friendly design consists of two layers of materials: a firmer, inner core made from recycled Iomic grips, and a softer surface layer of new Iomax material.`,
 
-	"iXx Cord 2.3": ``, // add new
-
-	"Sticky Opus BC 1.8": ``, // add new
-
-	"Sticky 3.5": ``, // add new
-
 }
 
 
 
 
 
-// ( these are interface image assets, not product photos )
+
 const iomic_assets = {
 	hand: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e963bf99a183d7cdf2853/1647220283444/hand.jpg',
 	startover: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e92b3b5e9bb484a46d127/1647219379718/startover.png',
@@ -397,6 +354,7 @@ const iomic_assets = {
 	firm_1: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e965aa9355e77af711a67/1647220314926/hand_extrasoft.png',
 	firm_2: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e9665144cda6e4197c285/1647220325394/hand_soft.png',
 	firm_3: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e966215b8c2139f1c1e78/1647220322491/hand_medium.png',
+	// firm_4: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e965e5b8af274450e435f/1647220318945/hand_firm.png',
 	firm_4: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622ea4f20696395c7ca44c2f/1647224050634/hand_firm.png',
 	tack_1: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e968edef6e30c7a8a8f90/1647220366962/tack_most.png',
 	tack_2: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e96885b8af274450e460f/1647220360758/tack_in-between.png',
@@ -409,7 +367,6 @@ const iomic_assets = {
 
 
 
-// *** add new ( for reference )
 const iomic_sizes = {
 	j: 'jnr',
 	ls: 'ladies S',
@@ -444,7 +401,7 @@ const iomic_get_class = size => {
 
 
 
-// *** add new 3 - potentially add filters here
+
 const iomic_is_allowed = iomic => {
 	/* 
 		test if size class + current settings are enabled routes 
@@ -1208,9 +1165,9 @@ const init_app = () => {
 			if( GIVEN_STATE.size === 'j' || GIVEN_STATE.size === 'ls' ){
 				early_return = "Sticky Lady's ＆ Junior"
 			}
-			// if( GIVEN_STATE.size === 'mxxl' ){
-			// 	early_return = 'Sticky JUMBO'
-			// }
+			if( GIVEN_STATE.size === 'mxxl' ){
+				early_return = 'Sticky JUMBO'
+			}
 			if( early_return ){
 
 				clone[ early_return ].tally = 10
@@ -1617,7 +1574,7 @@ const init_app = () => {
 					dropdown.addEventListener('change', () => {
 						if( !dropdown.value ) return
 						this.set_state('size', dropdown.value )
-						if( this.state.size === 'j' || this.state.size === 'ls' ){ // this.state.size === 'mxxl'
+						if( this.state.size === 'j' || this.state.size === 'ls' || this.state.size === 'mxxl' ){
 							this.show_result()
 							return
 						}
@@ -1626,7 +1583,7 @@ const init_app = () => {
 					dropdown.addEventListener('mouseup', () => {
 						if( !dropdown.value ) return
 						this.set_state('size', dropdown.value )
-						if( this.state.size === 'j' || this.state.size === 'ls' ){ // this.state.size === 'mxxl'
+						if( this.state.size === 'j' || this.state.size === 'ls' || this.state.size === 'mxxl' ){
 							this.show_result()
 							return
 						}
