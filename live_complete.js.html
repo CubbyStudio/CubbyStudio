@@ -618,7 +618,9 @@ document.addEventListener('DOMContentLoaded', async() => {
 		if( !document.getElementById('io-main')){ // the extremely annoying cache condition where the browser has left the script mid-execution
 			missing_main++
 			if( missing_main > 3 ){
-				location.reload()
+				// location.reload()
+				console.warn('FAILED TO FIND INIT ELE')
+				// clearInterval( appending_style )
 			}
 		}
 	}, 1000)
@@ -1838,12 +1840,17 @@ const init_app = () => {
 	if( locale === 'local' ){
 		document.body.appendChild( IOMIC.ele )
 	}else if( locale === 'production'){
-		const main = document.querySelector('.Main-content')
+		// const main = document.querySelector('.Main-content')
+		const main = document.querySelector('#page .content-wrapper')
+		const default_grid = main.querySelector('.content')
+		default_grid.remove()
+		// const main = document.querySelector('#page section.page-section')
 		if( !main ){
 			localog('failed to find main')
 			return
 		}
-		main.appendChild( IOMIC.ele )
+		main.append( IOMIC.ele )
+		// main.appendChild( IOMIC.ele )
 	}
 
 	IOMIC.show_step('size')
