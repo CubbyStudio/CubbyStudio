@@ -1,8 +1,8 @@
-how to add products
+# how to add products
 
-download full script
-search for "*** add new" comments
-and upload
+- download full script
+- search for "*** add new" comments
+- and upload
 
 the old js files may be useful for dev, but no for product addition
 
