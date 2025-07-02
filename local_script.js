@@ -49,7 +49,8 @@ const IMAGE = type => {
 		return iomic_assets[ type ]
 	}else{
 		localog('missing image for: ', type )
-		return 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/6228bf44eabeea07082789a7/1646837572339/asdf.png'
+		return `https://cdn.shopify.com/s/files/1/0679/8095/1612/files/missing-img-small.png?v=1751458768`
+		// return 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/6228bf44eabeea07082789a7/1646837572339/asdf.png'
 	}
 }
 
@@ -575,7 +576,7 @@ class Quiz {
 		// --- early returns
 		let early_return
 		if( GIVEN_STATE.size === 'j' || GIVEN_STATE.size === 'ls' ){
-			early_return = "Sticky Lady's ＆ Junior"
+			early_return = "Sticky 1.0"
 		}
 		if( GIVEN_STATE.size === 'mxxl' ){
 			early_return = 'Sticky JUMBO'
@@ -761,7 +762,7 @@ class Quiz {
 		// remove Ladies for Cadet+ size
 		// console.log( main.name, tally_obj.name )
 		const size_to_index = Object.keys( iomic_sizes ).indexOf( this.state.size )
-		if( tally_obj.name === "Sticky Lady's ＆ Junior" && size_to_index > 3 ){
+		if( tally_obj.name === "Sticky 1.0" && size_to_index > 3 ){
 			console.log('skipping Ladies recommendation')
 			return true
 		}

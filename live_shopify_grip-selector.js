@@ -20,10 +20,10 @@ const iomic_products = {
 	// 	firmness: [0,0,0,1],
 	// 	tackiness: [0,0,1],
 	// 	texture: [0,1,0],
-	// 	square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1696222190698-APS61FV9UNJ5KYCEM0G5/iXx+CORD.jpg?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1696222190698-APS61FV9UNJ5KYCEM0G5/iXx+CORD.jpg?format=750w',
 	// 	image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/iXx_Cord_2-3?v=1751077593',
 	// 	url: '',
-	// 	square_url: 'https://www.iomicusa.com/fullswing/ixxcord23',
+		// square_url: 'https://www.iomicusa.com/fullswing/ixxcord23',
 	// 	recommendations: [
 	// 		"iXX 2.3",
 	// 		"iX 2.3",
@@ -37,10 +37,10 @@ const iomic_products = {
 		firmness: [0,0,1,0],
 		tackiness: [1,0,0],
 		texture: [1,0,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1674691470990-444GRPXF53DN1BGK4RZS/opusBC1_8.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1674691470990-444GRPXF53DN1BGK4RZS/opusBC1_8.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/Sticky_Opus_BC_1-8?v=1751077595',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/sticky-opus-bc-1-8',
-		square_url: 'https://www.iomicusa.com/fullswing/sticky-opus-bc',
+		// square_url: 'https://www.iomicusa.com/fullswing/sticky-opus-bc',
 		recommendations: [
 			'Moebius Black 1.8',
 			'Sticky 1.8',
@@ -54,10 +54,10 @@ const iomic_products = {
 		firmness: [0,0,1,0],
 		tackiness: [1,0,0],
 		texture: [1,0,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1675096271768-GZS98DZO8CO92L6YV0WK/STICKY3_5title.jpg?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1675096271768-GZS98DZO8CO92L6YV0WK/STICKY3_5title.jpg?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/Sticky_3-5?v=1751077592',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/sticky-3-5',
-		square_url: 'https://www.iomicusa.com/fullswing/sticky3-5',
+		// square_url: 'https://www.iomicusa.com/fullswing/sticky3-5',
 		recommendations: [
 			'Sticky MID',
 			'Sticky JUMBO',
@@ -69,10 +69,10 @@ const iomic_products = {
 		firmness: [0,1,0,0],
 		tackiness: [0,1,0],
 		texture: [1,0,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1655511445757-JODL6I9TGL37ZXWPF22W/iXTOUCH+2.0_grey.jpg?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1655511445757-JODL6I9TGL37ZXWPF22W/iXTOUCH+2.0_grey.jpg?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/iX_Touch_2-0?v=1751077593',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/ix-touch-2-0',
-		square_url: 'https://www.iomicusa.com/fullswing/ix-touch',
+		// square_url: 'https://www.iomicusa.com/fullswing/ix-touch',
 		recommendations: [
 			'iXSA 2.0',
 			'Sticky 2.3',
@@ -85,11 +85,11 @@ const iomic_products = {
 		firmness: [0,0,0,0],
 		tackiness: [0,0,0],
 		texture: [0,0,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1645658589023-JN7M6JA15F92FHT8RH4B/Sticky_Ladies_Junior_feature_bleed_2021.png',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1645658589023-JN7M6JA15F92FHT8RH4B/Sticky_Ladies_Junior_feature_bleed_2021.png',
 		// image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/Sticky_Lady-s_-_Junior?v=1751077595',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/sticky1_0?v=1751174410',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/sticky-1-0',
-		square_url: 'https://www.iomicusa.com/fullswing/sticky-lady-junior',
+		// square_url: 'https://www.iomicusa.com/fullswing/sticky-lady-junior',
 		recommendations: []
 	},
 	"Sticky 1.8":{
@@ -97,10 +97,10 @@ const iomic_products = {
 		firmness: [0,0,1,0],
 		tackiness: [0,1,0],
 		texture: [1,0,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646428491059-OPFY9V1TLJ9RYMOCFE8Q/Sticky+1.8_feature_bleed.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646428491059-OPFY9V1TLJ9RYMOCFE8Q/Sticky+1.8_feature_bleed.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/Sticky_1-8?v=1751077594',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/sticky-1-8',
-		square_url: 'https://www.iomicusa.com/fullswing/sticky-18',
+		// square_url: 'https://www.iomicusa.com/fullswing/sticky-18',
 		recommendations: [
 			'Sticky 1.8 SUPER LIGHT',
 			'Sticky Camo 1.8',
@@ -111,10 +111,10 @@ const iomic_products = {
 		firmness: [0,0,1,0],
 		tackiness: [0,1,0],
 		texture: [1,0,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646101503248-M230772PCEXB9ZX8I4FN/Stick_Superlight_feature_bleed.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646101503248-M230772PCEXB9ZX8I4FN/Stick_Superlight_feature_bleed.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/Sticky_1-8_SUPER_LIGHT?v=1751077783',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/sticky-1-8-super-light',
-		square_url: 'https://www.iomicusa.com/fullswing/sticky-18-super-light',
+		// square_url: 'https://www.iomicusa.com/fullswing/sticky-18-super-light',
 		recommendations: []
 	},
 	"Sticky Evolution 1.8":{
@@ -122,10 +122,10 @@ const iomic_products = {
 		firmness: [0,0,1,0],
 		tackiness: [0,1,0],
 		texture: [0,1,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646345263045-IMAQA6YTT23TPRLPDPDO/Sticky+Evolution_feature_bleed.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646345263045-IMAQA6YTT23TPRLPDPDO/Sticky+Evolution_feature_bleed.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/Sticky_Evolution_1-8?v=1751077595',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/sticky-evolution-2-3-1-8-1-5',
-		square_url: 'https://www.iomicusa.com/fullswing/black-armor-2-sticky-evolution-23-18',
+		// square_url: 'https://www.iomicusa.com/fullswing/black-armor-2-sticky-evolution-23-18',
 		recommendations: [
 			'Sticky 1.8',
 			'Moebius Black 1.8',
@@ -136,10 +136,10 @@ const iomic_products = {
 		firmness: [0,1,0,0],
 		tackiness: [0,1,0],
 		texture: [0,1,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646083803698-E2VFZFPCX30SX33R6MG9/MOEBIUS+1.8_feature_bleed.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646083803698-E2VFZFPCX30SX33R6MG9/MOEBIUS+1.8_feature_bleed.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/Moebius_Black_1-8?v=1751077595',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/moebius-black-1-8',
-		square_url: 'https://www.iomicusa.com/fullswing/moebiusblack18',
+		// square_url: 'https://www.iomicusa.com/fullswing/moebiusblack18',
 		recommendations: [
 			'Sticky 1.8',
 			'Sticky Evolution 1.8',
@@ -150,10 +150,10 @@ const iomic_products = {
 		firmness: [0,0,1,0],
 		tackiness: [0,1,0],
 		texture: [1,0,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646031751688-1PJQ2QBDFGZ8E411GFM7/StickyCamo_feature_bleed.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646031751688-1PJQ2QBDFGZ8E411GFM7/StickyCamo_feature_bleed.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/Sticky_Camo_1-8?v=1751077595',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/sticky-camo-2-3-1-8',
-		square_url: 'https://www.iomicusa.com/fullswing/sticky-camo-23-18',
+		// square_url: 'https://www.iomicusa.com/fullswing/sticky-camo-23-18',
 		recommendations: []
 	},
 	"iXSA 2.0":{
@@ -161,10 +161,10 @@ const iomic_products = {
 		firmness: [1,0,0,0],
 		tackiness: [1,0,0],
 		texture: [1,0,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1645660116280-0GCTJVX39CJ6XV1VXNG7/IXSA_feature_bleed.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1645660116280-0GCTJVX39CJ6XV1VXNG7/IXSA_feature_bleed.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/iXSA_2-0?v=1751077595',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/ix-sa-2-0',
-		square_url: 'https://www.iomicusa.com/fullswing/ix-sa-20',
+		// square_url: 'https://www.iomicusa.com/fullswing/ix-sa-20',
 		recommendations: [
 			'Moebius Black 1.8',
 		]
@@ -174,10 +174,10 @@ const iomic_products = {
 		firmness: [0,0,1,0],
 		tackiness: [0,1,0],
 		texture: [1,0,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646343849332-BO6NO1WHYK45TLEATPIT/Sticky+2.3_feature_bleed.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646343849332-BO6NO1WHYK45TLEATPIT/Sticky+2.3_feature_bleed.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/Sticky_2-3?v=1751077595',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/sticky-2-3',
-		square_url: 'https://www.iomicusa.com/fullswing/sticky-23',
+		// square_url: 'https://www.iomicusa.com/fullswing/sticky-23',
 		recommendations: [
 			'Sticky Black Army 2.3',
 			'Sticky Camo 2.3',
@@ -188,10 +188,10 @@ const iomic_products = {
 		firmness: [0,0,1,0],
 		tackiness: [0,1,0],
 		texture: [0,1,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646345263045-IMAQA6YTT23TPRLPDPDO/Sticky+Evolution_feature_bleed.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646345263045-IMAQA6YTT23TPRLPDPDO/Sticky+Evolution_feature_bleed.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/Sticky_Evolution_2-3?v=1751077595',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/sticky-evolution-2-3-1-8-1-5',
-		square_url: 'https://www.iomicusa.com/fullswing/sticky-camo-23-18',
+		// square_url: 'https://www.iomicusa.com/fullswing/sticky-camo-23-18',
 		recommendations: [
 			'X-GRIP 2.3',
 		]
@@ -201,10 +201,10 @@ const iomic_products = {
 		firmness: [0,0,1],
 		tackiness: [0,0,1],
 		texture: [0,1,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646086399667-9I4EG0RJ0U7X9PHQNFDL/XEVOLUTION+2.3_feature_bleed.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646086399667-9I4EG0RJ0U7X9PHQNFDL/XEVOLUTION+2.3_feature_bleed.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/X-Evolution_2-3?v=1751077595',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/x-evolution-2-3',
-		square_url: 'https://www.iomicusa.com/fullswing/black-armor-2-x-evolution-23',
+		// square_url: 'https://www.iomicusa.com/fullswing/black-armor-2-x-evolution-23',
 		recommendations: [
 		]
 	},
@@ -213,10 +213,10 @@ const iomic_products = {
 		firmness: [0,0,1,0],
 		tackiness: [0,1,0],
 		texture: [1,0,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1645827893887-CCIY23ZAB43J6EQL5NMG/Sticky+BLACK+ARMY+2.3_feature_bleed.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1645827893887-CCIY23ZAB43J6EQL5NMG/Sticky+BLACK+ARMY+2.3_feature_bleed.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/Sticky_Black_Army_2-3?v=1751077595',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/sticky-black-army-2-3',
-		square_url: 'https://www.iomicusa.com/fullswing/sticky-black-army23',
+		// square_url: 'https://www.iomicusa.com/fullswing/sticky-black-army23',
 		recommendations: []
 	},
 	"Sticky Camo 2.3":{
@@ -224,10 +224,10 @@ const iomic_products = {
 		firmness: [0,0,1,0],
 		tackiness: [0,1,0],
 		texture: [1,0,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646031751688-1PJQ2QBDFGZ8E411GFM7/StickyCamo_feature_bleed.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646031751688-1PJQ2QBDFGZ8E411GFM7/StickyCamo_feature_bleed.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/Sticky_Camo_2-3?v=1751077595',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/sticky-camo-2-3-1-8',
-		square_url: 'https://www.iomicusa.com/fullswing/sticky-camo-23-18',
+		// square_url: 'https://www.iomicusa.com/fullswing/sticky-camo-23-18',
 		recommendations: []
 	},
 	"iX 2.3":{
@@ -235,10 +235,10 @@ const iomic_products = {
 		firmness: [0,0,0,1],
 		tackiness: [0,0,1],
 		texture: [1,0,1],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1645997766684-2I0CQK31U86HRAA0KS49/IX+2.3_feature_bleed.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1645997766684-2I0CQK31U86HRAA0KS49/IX+2.3_feature_bleed.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/iX_2-3?v=1751077595',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/ix-2-3',
-		square_url: 'https://www.iomicusa.com/fullswing/ix23',
+		// square_url: 'https://www.iomicusa.com/fullswing/ix23',
 		recommendations: [
 			'iXX 2.3',
 		]
@@ -248,10 +248,10 @@ const iomic_products = {
 		firmness: [0,0,0,1],
 		tackiness: [0,0,1],
 		texture: [0,0,1],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646023612895-K1IQKKJ7WIB87O36OHTN/IXx2.3_feature_bleed.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646023612895-K1IQKKJ7WIB87O36OHTN/IXx2.3_feature_bleed.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/iXX_2-3?v=1751077595',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/ixx-2-3',
-		square_url: 'https://www.iomicusa.com/fullswing/ixx23',
+		// square_url: 'https://www.iomicusa.com/fullswing/ixx23',
 		recommendations: [
 			'iX 2.3',
 		]
@@ -261,10 +261,10 @@ const iomic_products = {
 		firmness: [0,0,1,0],
 		tackiness: [0,1,0],
 		texture: [0,1,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646098205027-OGY3XCQ5DG31OEPDRFBB/X+GRIP++2.3_feature_bleed_SO.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646098205027-OGY3XCQ5DG31OEPDRFBB/X+GRIP++2.3_feature_bleed_SO.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/X-GRIP_2-3?v=1751077594',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/x-grip-2-3',
-		square_url: 'https://www.iomicusa.com/fullswing/x-grip23',
+		// square_url: 'https://www.iomicusa.com/fullswing/x-grip23',
 		recommendations: [
 			'Sticky Evolution 2.3'
 		]
@@ -274,10 +274,10 @@ const iomic_products = {
 		firmness: [0,0,1,1],
 		tackiness: [0,0,1],
 		texture: [0,1,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646370665473-4CPCBQ1OBJJYAXN33KU4/X+Evolution+2.6_feature_bleed.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646370665473-4CPCBQ1OBJJYAXN33KU4/X+Evolution+2.6_feature_bleed.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/X-Evolution_2-6?v=1751077595',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/x-evolution-2-6',
-		square_url: 'https://www.iomicusa.com/fullswing/x-evolution26',
+		// square_url: 'https://www.iomicusa.com/fullswing/x-evolution26',
 		recommendations: []
 	},
 	"MID Evolution":{
@@ -285,10 +285,10 @@ const iomic_products = {
 		firmness: [0,0,0,1],
 		tackiness: [0,1,1],
 		texture: [0,1,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646069410505-36LPVRW57QNO97LOAYJ5/MIDEVO_feature_bleed.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646069410505-36LPVRW57QNO97LOAYJ5/MIDEVO_feature_bleed.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/MID_Evolution?v=1751077595',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/mid-evolution',
-		square_url: 'https://www.iomicusa.com/fullswing/mid-evolution',
+		// square_url: 'https://www.iomicusa.com/fullswing/mid-evolution',
 		recommendations: [
 			'Sticky MID',
 		],
@@ -298,10 +298,10 @@ const iomic_products = {
 		firmness: [0,0,0,1],
 		tackiness: [1,1,0],
 		texture: [1,0,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646367839203-QL0AZQTKR8E07LYF5YYW/Sticky+MID_feature_bleed.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646367839203-QL0AZQTKR8E07LYF5YYW/Sticky+MID_feature_bleed.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/Sticky_MID?v=1751077595',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/sticky-mid',
-		square_url: 'https://www.iomicusa.com/fullswing/sticky-mid',
+		// square_url: 'https://www.iomicusa.com/fullswing/sticky-mid',
 		recommendations: [
 			'MID Evolution',
 			'Sticky JUMBO', // this is filtered out on all but MXL size
@@ -312,10 +312,10 @@ const iomic_products = {
 		firmness: [0,0,0,1],
 		tackiness: [1,0,0],
 		texture: [1,0,0],
-		square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646367738247-ED93L8FOYLOGK7RQZAL0/Sticky+JUMBO_feature_bleed.png?format=750w',
+		// square_image: 'https://images.squarespace-cdn.com/content/v1/56b3dc95859fd06e4103c4ae/1646367738247-ED93L8FOYLOGK7RQZAL0/Sticky+JUMBO_feature_bleed.png?format=750w',
 		image: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/Sticky_JUMBO?v=1751077595',
 		url: 'https://1ce4w0-6k.myshopify.com/collections/full-swing-1/products/sticky-jumbo',
-		square_url: 'https://www.iomicusa.com/fullswing/sticky-jumbo',
+		// square_url: 'https://www.iomicusa.com/fullswing/sticky-jumbo',
 		recommendations: [],
 	},
 }
@@ -438,22 +438,37 @@ Just between our Sticky 2.3 (Standard Size) and Sticky MID (Midsize) with our LT
 
 
 // ( these are interface image assets, not product photos )
-const iomic_assets = {
-	hand: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e963bf99a183d7cdf2853/1647220283444/hand.jpg',
-	startover: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e92b3b5e9bb484a46d127/1647219379718/startover.png',
-	buy_now: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e92c4c2eed331b3a56ff3/1647219396625/buynow.png',
-	firm_1: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e965aa9355e77af711a67/1647220314926/hand_extrasoft.png',
-	firm_2: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e9665144cda6e4197c285/1647220325394/hand_soft.png',
-	firm_3: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e966215b8c2139f1c1e78/1647220322491/hand_medium.png',
-	firm_4: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622ea4f20696395c7ca44c2f/1647224050634/hand_firm.png',
-	tack_1: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e968edef6e30c7a8a8f90/1647220366962/tack_most.png',
-	tack_2: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e96885b8af274450e460f/1647220360758/tack_in-between.png',
-	tack_3: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e968c43ca9a3c3ac7db6f/1647220364094/tack_least.png',
-	surface_1: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e9680f6ecfc26fccc3d86/1647220352413/grip_smooth.png',
-	surface_2: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e9677b5e9bb484a473764/1647220343947/grip_hybrid.png',
-	surface_3: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e967b15e88f37a27bf39d/1647220347125/grip_rough.png',
-}
+// const old_square_assets = {
+// 	hand: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e963bf99a183d7cdf2853/1647220283444/hand.jpg',
+// 	startover: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e92b3b5e9bb484a46d127/1647219379718/startover.png',
+// 	buy_now: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e92c4c2eed331b3a56ff3/1647219396625/buynow.png',
+// 	firm_1: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e965aa9355e77af711a67/1647220314926/hand_extrasoft.png',
+// 	firm_2: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e9665144cda6e4197c285/1647220325394/hand_soft.png',
+// 	firm_3: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e966215b8c2139f1c1e78/1647220322491/hand_medium.png',
+// 	firm_4: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622ea4f20696395c7ca44c2f/1647224050634/hand_firm.png',
+// 	tack_1: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e968edef6e30c7a8a8f90/1647220366962/tack_most.png',
+// 	tack_2: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e96885b8af274450e460f/1647220360758/tack_in-between.png',
+// 	tack_3: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e968c43ca9a3c3ac7db6f/1647220364094/tack_least.png',
+// 	surface_1: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e9680f6ecfc26fccc3d86/1647220352413/grip_smooth.png',
+// 	surface_2: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e9677b5e9bb484a473764/1647220343947/grip_hybrid.png',
+// 	surface_3: 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/622e967b15e88f37a27bf39d/1647220347125/grip_rough.png',
+// }
 
+const iomic_assets = {
+	hand: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/hand?v=1751458072',
+	startover: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/startover?v=1751458072',
+	buy_now: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/buy_now?v=1751458072',
+	firm_1: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/firm_1?v=1751458072',
+	firm_2: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/firm_2?v=1751458072',
+	firm_3: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/firm_3?v=1751458072',
+	firm_4: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/firm_4?v=1751458072',
+	tack_1: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/tack_1?v=1751458072',
+	tack_2: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/tack_2?v=1751458072',
+	tack_3: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/tack_3?v=1751458072',
+	surface_1: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/surface_1?v=1751458072',
+	surface_2: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/surface_2?v=1751458072',
+	surface_3: 'https://cdn.shopify.com/s/files/1/0679/8095/1612/files/surface_3?v=1751458072',
+}
 
 
 
@@ -730,7 +745,8 @@ const init_app = () => {
 			return iomic_assets[ type ]
 		}else{
 			localog('missing image for: ', type )
-			return 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/6228bf44eabeea07082789a7/1646837572339/asdf.png'
+			return `https://cdn.shopify.com/s/files/1/0679/8095/1612/files/missing-img-small.png?v=1751458768`
+			// return 'https://static1.squarespace.com/static/56b3dc95859fd06e4103c4ae/t/6228bf44eabeea07082789a7/1646837572339/asdf.png'
 		}
 	}
 
