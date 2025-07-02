@@ -8,7 +8,9 @@ All logic and data is in the single script:
 
 `assets/live_shopify_grip-selector.js`
 
-This script is loaded in `layout/theme.liquid` on any 'grip-selector' templated page.
+The Shopify file is not linked to the repo; they must be synced manually.
+
+The script is loaded in `layout/theme.liquid` on any 'grip-selector' templated page.
 
 ### css
 
